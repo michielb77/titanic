@@ -1,22 +1,17 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
+# This is a Shiny web application allowing people to explore the Titanic dataset.
 #
 
 library(shiny)
 library(tidyverse)
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- fluidPage(
    
    # Application title
    titlePanel("Titanic"),
    
-   # Sidebar with a slider input for number of bins 
+   # Sidebar with a input selecting variables and customizing plot 
    sidebarLayout(
       sidebarPanel(
          radioButtons("variable",
@@ -30,7 +25,7 @@ ui <- fluidPage(
                      choices = c("dodge", "stack"))
       ),
       
-      # Show a plot of the generated distribution
+      # Some explanation and the resulting plot
       mainPanel(
         p("Which people were able to survive when the Titanic sank?"),
         p("This page allows you to explore that question. By clicking the buttons on the left, 
